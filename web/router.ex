@@ -9,7 +9,7 @@ defmodule Shipbit.Router do
     pipe_through :api
 
     get "/", PageController, :index
-    resources "/games", GameController, except: [:new, :edit]
+    get "/games", GameController, :index
   end
 
 end
