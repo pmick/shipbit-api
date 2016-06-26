@@ -3,6 +3,6 @@ defmodule Shipbit.PageControllerTest do
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"
-    assert html_response(conn, 200) =~ "Welcome to Phoenix!"
+    assert json_response(conn, 200) == %{"version" => 2.0}
   end
 end

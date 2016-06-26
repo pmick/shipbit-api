@@ -1,11 +1,13 @@
-defmodule Shipbit.Repo.Migrations.AddDatesToUsers do
+defmodule Shipbit.Repo.Migrations.CreateGame do
   use Ecto.Migration
 
   def change do
-    alter table(:games) do
+    create table(:games) do
+      add :title, :string
       add :release_date, :datetime
 
       timestamps
     end
+
   end
 end

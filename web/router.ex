@@ -9,8 +9,7 @@ defmodule Shipbit.Router do
     pipe_through :api
 
     get "/", PageController, :index
-    get "/games", GameController, :get_all_games
-    post "/games", GameController, :update_or_create_games
+    resources "/games", GameController, except: [:new, :edit]
   end
 
 end
