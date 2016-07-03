@@ -10,6 +10,7 @@ defmodule Shipbit.Router do
 
     get "/", PageController, :index
     get "/games", GameController, :index
+    post "/games", GameController, :merge
   end
 
 end

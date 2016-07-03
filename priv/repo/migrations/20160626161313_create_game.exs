@@ -9,5 +9,6 @@ defmodule Shipbit.Repo.Migrations.CreateGame do
       timestamps
     end
 
+    create unique_index(:games, [:title])
   end
 end

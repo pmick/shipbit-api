@@ -10,8 +10,7 @@ defmodule Shipbit.GameView do
   end
 
   def render("game.json", %{game: game}) do
-    %{id: game.id,
-      title: game.title,
+    %{title: game.title,
       release_date: game.release_date}
   end
 end
