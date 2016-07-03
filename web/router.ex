@@ -9,8 +9,8 @@ defmodule Shipbit.Router do
     pipe_through :api
 
     get "/", PageController, :index
-    get "/games", GameController, :get_all_games
-    post "/games", GameController, :update_or_create_games
+    get "/games", GameController, :index
+    post "/games", GameController, :merge
   end
 
 end
