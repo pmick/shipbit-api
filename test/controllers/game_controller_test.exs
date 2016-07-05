@@ -40,15 +40,12 @@ defmodule Shipbit.GameControllerTest do
   end
 
   test "updates an existing game rather than making a duplicate" do
-    # Fails because of how the sandbox transactions work for postgres
-    # https://github.com/elixir-ecto/ecto/issues/1459
-    #
-    # game = Repo.insert! %Game{title: "some content"}
-    # conn = post conn, game_path(conn, :merge), games: [@valid_attrs]
-    # query = from g in Game,
-    #      where: g.title == "some content",
-    #      select: g
-    # games = Repo.all(query)
-    # assert length(games) == 1
+    game = Repo.insert! %Game{title: "some content"}
+    conn = post conn, game_path(conn, :merge), games: [@valid_attrs]
+    query = from g in Game,
+         where: g.title == "some content",
+         select: g
+    games = Repo.all(query)
+    assert length(games) == 1
   end
 end
